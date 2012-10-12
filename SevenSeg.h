@@ -24,10 +24,11 @@ public:
   
 //  void display(char str[4]);
   void display(char dig1, char dig2, char dig3, char dig4);
-  void display(uint16_t value);
+  void display(int16_t value); // changed to signed int (2012-10-11 CCW)
   
   void brightness(uint8_t value);
-  void reset();
+  void reset();  
+  void printError(); // added (2012-10-11 CCW)
   
 };
 
