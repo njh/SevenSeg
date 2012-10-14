@@ -78,7 +78,7 @@ void SevenSeg::display(int16_t num) {
 }
 
 // Function for displaying error message (2012-10-11 CCW)
-// Changed error message from "xxno" to "xERR"
+// Changed error message from "xxno" to "oUER"
 void SevenSeg::printError(void) {
-	display('x','E', 'R', 'R');
+	display('o','U', 'E', 'R');
 }
