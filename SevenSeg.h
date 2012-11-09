@@ -24,11 +24,11 @@ public:
 
 //  void display(char str[4]);
   void display(char dig1, char dig2, char dig3, char dig4);
-  void display(uint16_t value);
+  void display(int16_t value);
 
   void brightness(uint8_t value);
   void reset();
-
+  void printError();
 };
 
 #endif
