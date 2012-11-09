@@ -1,3 +1,13 @@
+//
+// SparkFun Seven Segment serial display library
+// By Nicholas Humfrey
+//
+// With help from this forum post:
+// http://arduino.cc/forum/index.php?topic=64362.0
+//
+// License: http://unlicense.org/
+//
+
 #include <SPI.h>
 #include "SevenSeg.h"
 
@@ -8,9 +18,12 @@ SevenSeg::SevenSeg(uint8_t slaveSelectPin) {
 void SevenSeg::init() {
     pinMode(this->slaveSelectPin, OUTPUT);
     SPI.setBitOrder(MSBFIRST);
+    // The maximum speed of the display is 250kHz
     SPI.setClockDivider(SPI_CLOCK_DIV128);
     SPI.setDataMode(SPI_MODE0);
     SPI.begin();
+
+    // Reset and blank the display
     reset();
 }
 

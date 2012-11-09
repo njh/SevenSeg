@@ -10,6 +10,10 @@ This library only supports using the SPI interface.
 Datasheet:
 http://www.sparkfun.com/datasheets/Components/LED/7-Segment/SFE-0012-DS-7segmentSerial-v41.pdf
 
+License:
+http://unlicense.org/
+
+
 
 Example
 -------
