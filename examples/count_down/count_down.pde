@@ -1,4 +1,3 @@
-#include <SPI.h>
 #include <SevenSeg.h>
 
 // 7 Segment display Slave Select connected to pin 10
