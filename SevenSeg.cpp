@@ -88,6 +88,11 @@ void SevenSeg::display(int16_t num) {
     }
 }
 
+void SevenSeg::setDecimalPoint(uint8_t value)
+{
+    command(0x77, value);
+}
+
 void SevenSeg::printError(void) {
     display('o','U', 'E', 'R');
 }

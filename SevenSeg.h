@@ -26,6 +26,8 @@ public:
   void display(char str[4]);
   void display(int16_t value);
 
+  void setDecimalPoint(uint8_t value);
+
   void brightness(uint8_t value);
   void reset();
   void printError();
