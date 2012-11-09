@@ -56,6 +56,10 @@ void SevenSeg::display(char dig1, char dig2, char dig3, char dig4) {
     digitalWrite(this->slaveSelectPin, HIGH);
 }
 
+void SevenSeg::display(char digits[4]) {
+  display(digits[0], digits[1], digits[2], digits[3]);
+}
+
 void SevenSeg::display(int16_t num) {
     const uint8_t base = 10;
     char digit[4] = { 0, ' ', ' ', ' ' };

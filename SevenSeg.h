@@ -22,8 +22,8 @@ public:
 
   void command(uint8_t command, uint8_t data);
 
-//  void display(char str[4]);
   void display(char dig1, char dig2, char dig3, char dig4);
+  void display(char str[4]);
   void display(int16_t value);
 
   void brightness(uint8_t value);
