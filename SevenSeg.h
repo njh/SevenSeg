@@ -1,4 +1,4 @@
-#ifndef	SEVEN_SEG_H
+#ifndef SEVEN_SEG_H
 #define SEVEN_SEG_H
 
 #if ARDUINO >= 100
@@ -17,18 +17,18 @@ private:
 
 public:
   SevenSeg(uint8_t slaveSelectPin);
-  
+
   void init();
 
   void command(uint8_t command, uint8_t data);
-  
+
 //  void display(char str[4]);
   void display(char dig1, char dig2, char dig3, char dig4);
   void display(uint16_t value);
-  
+
   void brightness(uint8_t value);
   void reset();
-  
+
 };
 
 #endif
