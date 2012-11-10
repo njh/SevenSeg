@@ -43,6 +43,7 @@ public:
   void display(int16_t value);
 
   void setDigit(uint8_t position, uint8_t value);
+  void setDigits(uint8_t dig1, uint8_t dig2, uint8_t dig3, uint8_t dig4);
   void setDecimalPoint(uint8_t value);
 
   void brightness(uint8_t value);

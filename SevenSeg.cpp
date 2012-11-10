@@ -89,6 +89,12 @@ void SevenSeg::setDigit(uint8_t position, uint8_t value)
     write(buf, 2);
 }
 
+void SevenSeg::setDigits(uint8_t dig1, uint8_t dig2, uint8_t dig3, uint8_t dig4)
+{
+    char buf[8] = {0x7B, dig1, 0x7C, dig2, 0x7D, dig3, 0x7E, dig4};
+    write(buf, 8);
+}
+
 void SevenSeg::setDecimalPoint(uint8_t value)
 {
     char buf[2] = {0x77, value};
