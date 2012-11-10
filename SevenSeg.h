@@ -20,10 +20,10 @@ public:
 
   void init();
 
-  void command(uint8_t command, uint8_t data);
+  void write(const char buf[], uint8_t len);
 
   void display(char dig1, char dig2, char dig3, char dig4);
-  void display(char str[4]);
+  void display(const char str[4]);
   void display(int16_t value);
 
   void setDecimalPoint(uint8_t value);

@@ -27,37 +27,32 @@ void SevenSeg::init() {
     reset();
 }
 
-void SevenSeg::reset() {
+void SevenSeg::write(const char buf[], uint8_t len) {
     digitalWrite(this->slaveSelectPin, LOW);
     delay(30);
-    SPI.transfer(0x76);
+    for(int i=0; i<len; i++) {
+        SPI.transfer(buf[i]);
+    }
     digitalWrite(this->slaveSelectPin, HIGH);
+}
+
+void SevenSeg::reset() {
+    char buf[1] = {0x76};
+    write(buf, 1);
 }
 
 void SevenSeg::brightness(uint8_t value) {
-    command(0x7A, value);
-}
-
-void SevenSeg::command(uint8_t command, uint8_t data) {
-    digitalWrite(this->slaveSelectPin, LOW);
-    delay(30);
-    SPI.transfer(command);
-    SPI.transfer(data);
-    digitalWrite(this->slaveSelectPin, HIGH);
+    char buf[2] = {0x7A, value};
+    write(buf, 2);
 }
 
 void SevenSeg::display(char dig1, char dig2, char dig3, char dig4) {
-    digitalWrite(this->slaveSelectPin, LOW);
-    delay(30);
-    SPI.transfer(dig1);
-    SPI.transfer(dig2);
-    SPI.transfer(dig3);
-    SPI.transfer(dig4);
-    digitalWrite(this->slaveSelectPin, HIGH);
+    char buf[4] = {dig1, dig2, dig3, dig4};
+    write(buf, 4);
 }
 
-void SevenSeg::display(char digits[4]) {
-  display(digits[0], digits[1], digits[2], digits[3]);
+void SevenSeg::display(const char digits[4]) {
+    write(digits, 4);
 }
 
 void SevenSeg::display(int16_t num) {
@@ -90,9 +85,10 @@ void SevenSeg::display(int16_t num) {
 
 void SevenSeg::setDecimalPoint(uint8_t value)
 {
-    command(0x77, value);
+    char buf[2] = {0x77, value};
+    write(buf, 2);
 }
 
 void SevenSeg::printError(void) {
-    display('o','U', 'E', 'R');
+    write("oUER", 4);
 }
