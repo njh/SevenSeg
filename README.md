@@ -15,6 +15,43 @@ http://unlicense.org/
 
 
 
+API Overview
+------------
+
+Display an integer number (-999 to 9999):
+
+    void display(int16_t value);
+
+Display a sequence of 4 characters:
+
+    void display(char dig1, char dig2, char dig3, char dig4);
+
+Display a string of 4 characters:
+
+    void display(const char str[4]);
+
+Set specific segments of a digit (using SEVENSEG_A, SEVENSEG_B, ... constants):
+
+    void setDigit(uint8_t position, uint8_t value);
+
+Set specific segments of all four digits at once:
+
+    void setDigits(uint8_t dig1, uint8_t dig2, uint8_t dig3, uint8_t dig4);
+
+Turn on and off the decimal points (see datasheet for values):
+
+    void setDecimalPoint(uint8_t value);
+
+Set the brightness of the display:
+
+    void brightness(uint8_t value);
+
+Reset the display:
+
+    void reset();
+
+
+
 Example
 -------
 
